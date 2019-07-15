@@ -99,7 +99,7 @@
                                 <tr>
                                     <td>{{$shop->name}}</td>
                                     <td><a href="{{$shop->url}}" target="_blank">{{$shop->url}}</a></td>
-                                    <td>{{$shop->name}}</td>
+                                    <td>{{$shop->telephone}}</td>
                                     <td>{{$shop->email}}</td>
                                     <td>{{ ($shop->segment == 'individual') ? 'Individual' : 'Representante' }}</td>
                                     <td><span class="badge badge-success">{{$shop->status}}</span></td>

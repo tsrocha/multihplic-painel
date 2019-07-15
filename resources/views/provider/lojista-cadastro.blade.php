@@ -147,8 +147,8 @@
 											<input type="text" name="segment" class="form-control" placeholder="Ex: Calçados">
 										</div>
 										<div class="form-group">
-											<label>URL da loja:</label>
-											<input type="url" name="url" class="form-control" placeholder="https://sualoja.multihplic.com.br" required>
+											<label>ID da loja:</label>
+											<input type="url" name="url" class="form-control" placeholder="https://id-da-loja.seudominio.com.br" required>
 										</div>
 									</fieldset>
 								</div>

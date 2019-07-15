@@ -58,7 +58,7 @@
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
 						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Relatório</span></h4>
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+						{{--<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>--}}
 					</div>
 				</div>
 
@@ -70,7 +70,7 @@
 							<span class="breadcrumb-item active">Financeiro</span>
 						</div>
 
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+						{{--<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>--}}
 					</div>
 				</div>
 			</div>

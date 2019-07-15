@@ -115,7 +115,7 @@
 										</a>
 										<div class="dropdown-menu dropdown-menu-right">
 											<a href="#" class="dropdown-item"><i class="icon-user-check"></i> Editar</a>
-											<a href="/provider/product/variation-delete/{{$variation->id}}" class="dropdown-item"><i class="icon-close2"></i> Remover</a>
+											<a href="/provider/product/variation-delete/{{$variation->id}}/{{$variation->product_id}}" class="dropdown-item"><i class="icon-close2"></i> Remover</a>
 										</div>
 									</div>
 								</div>

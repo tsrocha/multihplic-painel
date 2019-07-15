@@ -117,6 +117,10 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+                                            {{--<div class="form-group">--}}
+                                                {{--<label>COR:</label>--}}
+                                                {{--<input type="color" name="color" class="form-control" placeholder="1">--}}
+                                            {{--</div>--}}
                                             <div class="form-group">
                                                 <label>Quantidade em estoque:</label>
                                                 <input type="number" name="stock" class="form-control" placeholder="1">

@@ -148,7 +148,7 @@
 											<input type="text" data-mask="decimal" name="promotion_value" class="form-control" placeholder="" value="0">
 										</div>
 										<div class="form-group">
-											<label>Disconto (%):</label>
+											<label>Disconto no boleto a vista (%):</label>
 											<input type="text" data-mask="decimal" name="discount" class="form-control" placeholder="" value="0">
 										</div>
 										<div class="form-group">

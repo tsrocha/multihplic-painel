@@ -77,10 +77,10 @@ Route::group(['middleware' => ['jwt.verify']], function() {
         Route::post('/product/atribute-add', 'AtributeController@store');
         Route::get('/product/atribute-delete/{id}', 'AtributeController@delete');
 
-        Route::get('/product/variation-list', 'VariationController@list');
-        Route::get('/product/variation-add', 'VariationController@add');
-        Route::post('/product/variation-add', 'VariationController@store');
-        Route::get('/product/variation-delete/{id}', 'VariationController@delete');
+        Route::get('/product/variation-list/{product_id}', 'VariationController@list');
+        Route::get('/product/variation-add/{product_id}', 'VariationController@add');
+        Route::post('/product/variation-add/{product_id}', 'VariationController@store');
+        Route::get('/product/variation-delete/{id}/{product_id}', 'VariationController@delete');
 
         Route::get('/product/departament-list', 'DepartamentController@list');
         Route::get('/product/departament-add', 'DepartamentController@add');
@@ -104,6 +104,36 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
         //PROVIDER
         Route::get('/shop/request-product', 'ProviderController@requestProduct');
+
+        Route::get('/product/atribute-list', 'AtributeController@list');
+        Route::get('/product/atribute-add', 'AtributeController@add');
+        Route::post('/product/atribute-add', 'AtributeController@store');
+        Route::get('/product/atribute-delete/{id}', 'AtributeController@delete');
+
+        Route::get('/product/variation-list', 'VariationController@list');
+        Route::get('/product/variation-add', 'VariationController@add');
+        Route::post('/product/variation-add', 'VariationController@store');
+        Route::get('/product/variation-delete/{id}', 'VariationController@delete');
+
+        Route::get('/product/departament-list', 'DepartamentController@list');
+        Route::get('/product/departament-add', 'DepartamentController@add');
+        Route::post('/product/departament-add', 'DepartamentController@store');
+        Route::get('/product/departament-delete/{id}', 'DepartamentController@delete');
+
+        Route::get('/product/category-list', 'CategoryController@list');
+        Route::get('/product/category-add', 'CategoryController@add');
+        Route::post('/product/category-add', 'CategoryController@store');
+        Route::get('/product/category-delete/{id}', 'CategoryController@delete');
+
+        Route::get('/product/category-list', 'SubcategoryController@list');
+        Route::get('/product/category-add', 'SubcategoryController@add');
+        Route::post('/product/category-add', 'SubcategoryController@store');
+        Route::get('/product/category-delete/{id}', 'SubcategoryController@delete');
+
+        Route::get('/product/brand-list', 'BrandController@list');
+        Route::get('/product/brand-add', 'BrandController@add');
+        Route::post('/product/brand-add', 'BrandController@store');
+        Route::get('/product/brand-delete/{id}', 'BrandController@delete');
 
         Route::get('/product/list', 'ProductController@list');
         Route::get('/product/add', 'ProductController@add');
