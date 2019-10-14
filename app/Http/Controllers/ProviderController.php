@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Help;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use GuzzleHttp\Exception;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Storage;
 
 class ProviderController extends Controller
 {
@@ -17,7 +19,7 @@ class ProviderController extends Controller
 
     public function __construct()
     {
-        $this->base_url = 'http://api.multihplic.com.br/api/';
+        $this->base_url = '//api.multihplic.com.br/api/';
         $this->middleware(function ($request, $next) {
             $this->user = Session::get('user');
             return $next($request);
@@ -66,8 +68,17 @@ class ProviderController extends Controller
         $body = $request->all();
         unset($body['_token']);
 
-        $this->client = new Client();
-        $result = $this->client->request('POST', $this->base_url.'provider/add', [
+        if($request->hasFile('logo')) {
+
+            //filename to store
+            $filenametostore = Help::slug($request->socialName).'/logo.png';
+
+            Storage::disk('s3')->put($filenametostore, file_get_contents($request->file('logo')), 'public');
+
+        }
+
+        $client = new Client();
+        $result = $client->request('POST', $this->base_url.'provider/add', [
             'form_params' => $body,
             'headers' => [
                 'Authorization' => 'Bearer '.Session::get('MultihplicAuth')

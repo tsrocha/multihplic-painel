@@ -40,7 +40,7 @@
 	<script src="/assets/js/app.js"></script>
 	<script src="/global_assets/js/demo_pages/form_layouts.js"></script>
 	<!-- /theme JS files -->
-	<script src="/assets/js/tinymce.min.js"></script>
+	<script src="https://cdn.tiny.cloud/1/hvidms2wb1npza04dnn00hkvr0su2360kzmtd3gitleysncz/tinymce/5/tinymce.min.js"></script>
 	<script src="/assets/js/meiomask.js" type="text/javascript"></script>
 	<script src="/assets/js/tinyMCE.js" type="text/javascript"></script>
     <script src="/global_assets/js/demo_pages/form_multiselect.js"></script>

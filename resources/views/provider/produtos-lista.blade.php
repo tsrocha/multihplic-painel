@@ -115,7 +115,7 @@
 								<td>
 									<div class="media">
 										<a href="#" class="mr-3">
-											<img src="{{$product->images[0]->url}}" height="60" alt="">
+											<img src="{{(isset($product->images[0]->url))? $product->images[0]->url : ''}}" height="60" alt="">
 										</a>
 
 										<div class="media-body align-self-center">
@@ -149,10 +149,10 @@
 											<a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
 											<div class="dropdown-menu dropdown-menu-right">
 												<a href="/provider/product/variation-list/{{$product->id}}" class="dropdown-item"><i class="icon-list"></i> Variações</a>
-												<a href="#" class="dropdown-item"><i class="icon-pencil5"></i> Editar</a>
-												<a href="#" class="dropdown-item"><i class="icon-eye8"></i> Detalhes</a>
+												<a href="/provider/product/editar/{{$product->id}}" class="dropdown-item"><i class="icon-pencil5"></i> Editar</a>
+												<a href="/provider/product/detalhes/{{$product->id}}" class="dropdown-item"><i class="icon-eye8"></i> Detalhes</a>
 												<div class="dropdown-divider"></div>
-												<a href="#" class="dropdown-item"><i class="icon-close2"></i> Remover</a>
+												<a href="/provider/product/delete/{{$product->id}}" class="dropdown-item"><i class="icon-close2"></i> Remover</a>
 											</div>
 										</div>
 									</div>

@@ -70,9 +70,10 @@ class AuthController extends Controller
             ]);
 
             $user = json_decode($requestUser->getBody());
-            Session::put('user', $user->user);
+
+            Session::put('user', $user);
             Session::put('MultihplicAuth', $response->token);
-            return redirect('/'.$user->user->type.'/painel');
+            return redirect('/'.$user->type.'/painel');
 
         } else {
 

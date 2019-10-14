@@ -55,8 +55,9 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
         // CONFIGURAÇÕES DE TEMAS
         Route::get('/tema/cadastro', 'ConfigurationsController@themeAdd');
-        Route::post('/tema/cadastro', 'ConfigurationsController@themeAdd');
+        Route::post('/tema/cadastro', 'ConfigurationsController@themeStore');
         Route::get('/temas', 'ConfigurationsController@themeList');
+        Route::get('/tema/delete/{id}', 'ConfigurationsController@themeDel');
 
    });
 
@@ -87,10 +88,10 @@ Route::group(['middleware' => ['jwt.verify']], function() {
         Route::post('/product/departament-add', 'DepartamentController@store');
         Route::get('/product/departament-delete/{id}', 'DepartamentController@delete');
 
-        Route::get('/product/category-list', 'CategoryController@list');
-        Route::get('/product/category-add', 'CategoryController@add');
-        Route::post('/product/category-add', 'CategoryController@store');
-        Route::get('/product/category-delete/{id}', 'CategoryController@delete');
+//        Route::get('/product/category-list', 'CategoryController@list');
+//        Route::get('/product/category-add', 'CategoryController@add');
+//        Route::post('/product/category-add', 'CategoryController@store');
+//        Route::get('/product/category-delete/{id}', 'CategoryController@delete');
 
         Route::get('/product/subcategory-list', 'SubcategoryController@list');
         Route::get('/product/subcategory-add', 'SubcategoryController@add');
@@ -125,10 +126,10 @@ Route::group(['middleware' => ['jwt.verify']], function() {
         Route::post('/product/category-add', 'CategoryController@store');
         Route::get('/product/category-delete/{id}', 'CategoryController@delete');
 
-        Route::get('/product/category-list', 'SubcategoryController@list');
-        Route::get('/product/category-add', 'SubcategoryController@add');
-        Route::post('/product/category-add', 'SubcategoryController@store');
-        Route::get('/product/category-delete/{id}', 'SubcategoryController@delete');
+        Route::get('/product/subcategory-list', 'SubcategoryController@list');
+        Route::get('/product/subcategory-add', 'SubcategoryController@add');
+        Route::post('/product/subcategory-add', 'SubcategoryController@store');
+        Route::get('/product/subcategory-delete/{id}', 'SubcategoryController@delete');
 
         Route::get('/product/brand-list', 'BrandController@list');
         Route::get('/product/brand-add', 'BrandController@add');
@@ -161,6 +162,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
         // CONFIGURAÇÕES DE TEMAS
         Route::get('/temas', 'ConfigurationsController@themeList');
+        Route::get('/tema/definir/{id}', 'ConfigurationsController@themeUp');
 
     });
 

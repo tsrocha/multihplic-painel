@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use GuzzleHttp\Exception;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -141,15 +142,29 @@ class ProductController extends Controller
     }
 
     public function upload(Request $request, $id) {
+
         $body = null;
-        $images = array();
-        if($files = $request->file('images')){
-            foreach($files as $file){
-                $name = time().'.'.$file->getClientOriginalExtension();
-                $file->move('images/products/'.$this->user->id, $name);
-                $images[] = $name;
-                $body['image'][] = $this->url_image.$this->user->id.'/'.$name;
+
+        if($this->user->type == 'provider') {
+            $socialName = $this->user->provider[0]->company[0]->socialName;
+        } else if($this->user->type == 'shop') {
+            $socialName = $this->user->shop[0]->company[0]->socialName;
+        } else {
+            return redirect('/');
+        }
+
+        if($request->hasFile('images')) {
+
+            $this->validate($request, ['images' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048']);
+
+            foreach ($request->file('images') as $file){
+                $name = md5(time()) . '.' .$file->getClientOriginalExtension();
+                $filePath =  Help::slug($socialName).'products/' . $name;
+                Storage::disk('s3')->put($filePath, file_get_contents($file), 'public');
+                $url  = Storage::disk('s3')->url($filePath);
+                $body['image'][] .= $url;
             }
+
         }
 
         $this->client = new Client();

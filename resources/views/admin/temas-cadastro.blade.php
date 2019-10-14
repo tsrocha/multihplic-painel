@@ -87,34 +87,49 @@
 					</div>
 
 					<div class="card-body">
+
+						@if(isset($return['status']))
+							<div class="alert alert-{{ ($return['status'] == 'success')? 'success' : 'danger' }}" role="alert">
+								{{$return['msg']}}
+							</div>
+						@endif
+
 						<p class="mb-3">Para cadastrar um novo tema, você deve adicionar um nome, um segmento, as imagens do tema e adicionar a URL base onde esta localizado os arquivos do tema.</p>
 
-						<form action="#">
+						<form action="/admin/tema/cadastro" enctype="multipart/form-data" method="post">
+							@csrf
 							<div class="form-group">
 								<label>Nome do tema:</label>
-								<input type="text" class="form-control" placeholder="">
+								<input type="text" name="name" class="form-control" placeholder="Junko">
 							</div>
 
 							<div class="form-group">
-								<label>URL base:</label>
-								<input type="text" class="form-control" placeholder="/tema/segmento/tintas/t_1">
+								<label>Slug do tema:</label>
+								<input type="text" class="form-control" name="slug" placeholder="eletronic">
+							</div>
+
+							<div class="form-group">
+								<label>Descrição:</label>
+								<textarea name="description" class="form-control" placeholder="Digite uma breve descrição"></textarea>
 							</div>
 
 							<div class="form-group">
 								<label>Segmento:</label>
-								<select class="form-control">
-									<option>Segmento o segmento</option>
-									<option>Roupas e acessórios</option>
-									<option>Artes</option>
-									<option>Pintura</option>
-									<option>Maquinário</option>
-									<option>Automóveis</option>
+								<select class="form-control" name="segment">
+									<option>Selecione um segmento</option>
+									<option value="Roupas e acessórios">Roupas e acessórios</option>
+									<option value="Artes">Artes</option>
+									<option value="Eletrônico">Eletrônico</option>
+									<option value="Maquinário">Maquinário</option>
+									<option value="Automóveis">Automóveis</option>
+									<option value="Construção">Construção</option>
+									<option value="Joias">Joias</option>
 								</select>
 							</div>
 
 							<div class="form-group">
 								<label>Upload de imagens:</label>
-								<input type="file" class="file-input" multiple="multiple" data-fouc>
+								<input type="file" name="filename[]" class="file-input" multiple="multiple" data-fouc>
 							</div>
 
 						</form>
@@ -124,7 +139,6 @@
 
 			</div>
 			<!-- /content area -->
-
 
 			<!-- Footer -->
 			@include('admin.inc.footer')

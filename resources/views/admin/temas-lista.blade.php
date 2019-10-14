@@ -83,41 +83,52 @@
 				</div>
 
 				<div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-success" role="alert">
-                            Nenhum tema encontrado!
-                        </div>
-                    </div>
-                    {{--<div class="col-sm-6 col-xl-3">--}}
-						{{--<div class="card">--}}
-							{{--<div class="card-img-actions mx-1 mt-1">--}}
-								{{--<img class="card-img img-fluid" src="./global_assets/images/demo/flat/1.png" alt="">--}}
-								{{--<div class="card-img-actions-overlay card-img">--}}
-									{{--<a href="./global_assets/images/demo/flat/1.png" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round" data-popup="lightbox" rel="group">--}}
-										{{--<i class="icon-plus3"></i>--}}
-									{{--</a>--}}
+					@if(count($themes) == 0)
+						<div class="col-lg-12">
+							<div class="alert alert-success" role="alert">
+								Nenhum tema encontrado!
+							</div>
+						</div>
+					@endif
 
-									{{--<a href="#" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2">--}}
-										{{--<i class="icon-link"></i>--}}
-									{{--</a>--}}
-								{{--</div>--}}
-							{{--</div>--}}
+					@if(isset($return))
+						<div class="col-lg-12">
+							<div class="alert alert-danger" role="alert">
+								{{$return['msg']}}
+							</div>
+						</div>
+					@endif
 
-							{{--<div class="card-body">--}}
-								{{--<div class="d-flex align-items-start flex-nowrap">--}}
-									{{--<div>--}}
-										{{--<div class="font-weight-semibold mr-2">For ostrich much</div>--}}
-										{{--<span class="font-size-sm text-muted">Size: 432kb</span>--}}
-									{{--</div>--}}
+					@foreach($themes as $theme)
+                    <div class="col-sm-6 col-xl-3">
+						<div class="card">
+							<div class="card-img-actions mx-1 mt-1">
+								<img class="card-img img-fluid" src="{{$theme['images'][0]['image']}}" alt="{{$theme['name']}}">
+								<div class="card-img-actions-overlay card-img">
+									<a href="{{$theme['images'][0]['image']}}" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round" data-popup="lightbox" rel="group">
+										<i class="icon-plus3"></i>
+									</a>
+									<a href="#" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2">
+										<i class="icon-link"></i>
+									</a>
+								</div>
+							</div>
 
-									{{--<div class="list-icons list-icons-extended ml-auto">--}}
-										{{--<a href="#" class="list-icons-item"><i class="icon-download top-0"></i></a>--}}
-										{{--<a href="#" class="list-icons-item"><i class="icon-bin top-0"></i></a>--}}
-									{{--</div>--}}
-								{{--</div>--}}
-							{{--</div>--}}
-						{{--</div>--}}
-					{{--</div>--}}
+							<div class="card-body">
+								<div class="d-flex align-items-start flex-nowrap">
+									<div>
+										<div class="font-weight-semibold mr-2">{{$theme['name']}}</div>
+										<span class="font-size-sm text-muted">{{$theme['description']}}</span>
+									</div>
+
+									<div class="list-icons list-icons-extended ml-auto">
+										<a href="/admin/tema/delete/{{$theme['id']}}" class="list-icons-item"><i class="icon-bin top-0"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					@endforeach
 
 			</div>
 			<!-- /content area -->
@@ -131,7 +142,9 @@
 		<!-- /main content -->
 
 	</div>
-	<!-- /page content -->
+		<!-- /page content -->
+
+
 
 </body>
 </html>

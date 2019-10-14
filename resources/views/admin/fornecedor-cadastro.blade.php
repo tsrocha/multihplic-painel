@@ -163,11 +163,11 @@
                                             <label>Estado:</label>
                                             <input type="text" name="state" class="form-control" placeholder="" required>
                                         </div>
-										{{--<div class="form-group">--}}
-											{{--<label>Logo (marca do fornecedor):</label>--}}
-											{{--<input type="file" class="form-input-styled" data-fouc>--}}
-											{{--<span class="form-text text-muted">Extenções aceitas: png, jpg. Tamanho máx do arquivo 2Mb</span>--}}
-										{{--</div>--}}
+										<div class="form-group">
+											<label>Logo (marca do fornecedor):</label>
+											<input type="file" name="logo" class="form-input-styled" data-fouc>
+											<span class="form-text text-muted">Extenções aceitas: png, jpg. Tamanho máx do arquivo 2Mb</span>
+										</div>
 
 										<div class="form-group">
 											<label>Observações:</label>
