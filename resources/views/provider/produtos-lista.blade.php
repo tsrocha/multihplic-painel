@@ -111,7 +111,7 @@
 						<tbody>
                             @foreach($products as $product)
 							<tr>
-                                <td>Masculino</td>
+                                <td>{{$product->departament->name}}</td>
 								<td>
 									<div class="media">
 										<a href="#" class="mr-3">
@@ -130,14 +130,16 @@
 								<td><a href="#">{{$product->codigo}}</a></td>
 								<td>{{$product->height / 100}}cm x {{$product->width / 100}}cm x {{$product->weight / 100}}cm</td>
 								<td>
+									@foreach($product->variation_product as $variation)
+
 									<p>
-									Tamnho <span class="badge badge-primary">Grande</span>
-									<span class="badge badge-primary">Pequeno</span>
+										{{$variation->variation[0]->name}}
+										@foreach($variation->variation[0]->variation_value as $value)
+											<span class="badge badge-primary">{{$value->name}}</span>
+										@endforeach
 									</p>
-									<p>
-									Cor <span class="badge badge-secondary">Azul</span>
-									<span class="badge badge-secondary">Amarelo</span>
-									</p>
+									@endforeach
+
 								</td>
 								<td>{{$product->stock}}</td>
 								<td>
@@ -150,7 +152,7 @@
 											<div class="dropdown-menu dropdown-menu-right">
 												<a href="/provider/product/variation-list/{{$product->id}}" class="dropdown-item"><i class="icon-list"></i> Variações</a>
 												<a href="/provider/product/editar/{{$product->id}}" class="dropdown-item"><i class="icon-pencil5"></i> Editar</a>
-												<a href="/provider/product/detalhes/{{$product->id}}" class="dropdown-item"><i class="icon-eye8"></i> Detalhes</a>
+												<a href="/provider/product/images/{{$product->id}}" class="dropdown-item"><i class="icon-image2"></i> Imagens</a>
 												<div class="dropdown-divider"></div>
 												<a href="/provider/product/delete/{{$product->id}}" class="dropdown-item"><i class="icon-close2"></i> Remover</a>
 											</div>
@@ -238,7 +240,7 @@
 									<div class="form-group mb-2">
 										<div class="font-size-xs text-uppercase text-muted mb-3">{{$atribute->name}}</div>
 										<div class="row row-labels">
-                                            @foreach($atribute->variation as $vatiation)
+                                            @foreach($atribute->variation_value as $vatiation)
 											<div class="col-3">
 												<a href="#" class="badge badge-flat border-grey text-grey-800 d-flex justify-content-center p-2 mb-2">{{$vatiation->name}}</a>
 											</div>
@@ -250,7 +252,7 @@
 										<div class="font-size-xs text-uppercase text-muted mb-3">{{$atribute->name}}</div>
 
 										<div class="row">
-                                            @foreach($atribute->variation as $vatiation)
+                                            @foreach($atribute->variation_value as $vatiation)
 											<div class="col-4">
 												<div class="mb-2">
 													<a href="#" class="d-block p-2 rounded" ><div class="py-1"></div></a>

@@ -67,8 +67,17 @@ class VariationController extends Controller
 
     public function store(Request $request, $product_id) {
 
+        if($this->user->type == 'provider') {
+            $companyId = $this->user->provider[0]->company[0]->id;
+        } else if ($this->user->type == 'shop') {
+            $companyId = $this->user->shop[0]->company[0]->id;
+        } else  {
+            return redirect('/');
+        }
+
         $body = $request->all();
         unset($body['_token']);
+        $body['company_id'] = $companyId;
 
         $this->client = new Client();
         $result = $this->client->request('POST', $this->base_url.$this->user->type.'/product/variation/add/'.$this->user->id.'/'.$product_id, [

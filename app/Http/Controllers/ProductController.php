@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Exception;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Storage;
+use App\Help;
 
 class ProductController extends Controller
 {
@@ -48,7 +49,7 @@ class ProductController extends Controller
             ]
         ]);
 
-        $resultAtribute = $this->client->request('GET', $this->base_url.$this->user->type.'/product/atribute/list/'.$this->user->id, [
+        $resultAtribute = $this->client->request('GET', $this->base_url.$this->user->type.'/product/atribute/list/'.$this->user->id.'/'.$this->user->type, [
             'headers' => [
                 'Authorization' => 'Bearer '.Session::get('MultihplicAuth')
             ]
@@ -143,7 +144,8 @@ class ProductController extends Controller
 
     public function upload(Request $request, $id) {
 
-        $body = null;
+        $body = [];
+        $body['image'] = [];
 
         if($this->user->type == 'provider') {
             $socialName = $this->user->provider[0]->company[0]->socialName;
@@ -155,9 +157,8 @@ class ProductController extends Controller
 
         if($request->hasFile('images')) {
 
-            $this->validate($request, ['images' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048']);
-
             foreach ($request->file('images') as $file){
+
                 $name = md5(time()) . '.' .$file->getClientOriginalExtension();
                 $filePath =  Help::slug($socialName).'products/' . $name;
                 Storage::disk('s3')->put($filePath, file_get_contents($file), 'public');
@@ -183,6 +184,19 @@ class ProductController extends Controller
 
         return redirect('/provider/product/images/'.$id);
     }
+
+    public function deleteImages($product_id, $id) {
+
+        $this->client = new Client();
+        $result = $this->client->request('DELETE', $this->base_url.'provider/product/image/delete/'.$id, [
+            'headers' => [
+                'Authorization' => 'Bearer '.Session::get('MultihplicAuth')
+            ]
+        ]);
+
+        return redirect('/provider/product/images/'.$product_id);
+    }
+
 
     public function delete($id) {
 

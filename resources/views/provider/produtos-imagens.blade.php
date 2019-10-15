@@ -116,7 +116,7 @@
                                     <a href="{{$image->url}}" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round" data-popup="lightbox" rel="group">
                                         <i class="icon-plus3"></i>
                                     </a>
-                                    <a href="#" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2">
+                                    <a href="/provider/produto/imagem/delete/{{$image->product_id}}/{{$image->id}}" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2">
                                         <i class="icon-trash"></i>
                                     </a>
                                 </div>

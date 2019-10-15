@@ -138,8 +138,11 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
         Route::get('/product/list', 'ProductController@list');
         Route::get('/product/add', 'ProductController@add');
+        Route::get('/product/edit', 'ProductController@edit');
+        Route::post('/product/edit', 'ProductController@update');
         Route::get('/product/images/{id}', 'ProductController@images');
         Route::post('/product/images/{id}', 'ProductController@upload');
+        Route::get('/produto/imagem/delete/{product_id}/{id}', 'ProductController@deleteImages');
         Route::post('/product/add', 'ProductController@store');
         Route::get('/product/delete/{id}', 'ProductController@delete');
 
