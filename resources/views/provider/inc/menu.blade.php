@@ -62,8 +62,8 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Themes">
                                 <li class="nav-item"><a href="/provider/shop/add" class="nav-link active">Cadastro de lojistas</a></li>
 								<li class="nav-item"><a href="/provider/shop/list/representative" class="nav-link active">Lojistas Representantes</a></li>
-								<li class="nav-item"><a href="/provider/shop/list/individual" class="nav-link active">Lojistas Individuais</a></li>
-								<li class="nav-item"><a href="/provider/shop/request-product" class="nav-link active">Solicitação de produtos</a></li>
+								{{--<li class="nav-item"><a href="/provider/shop/list/individual" class="nav-link active">Lojistas Individuais</a></li>--}}
+								{{--<li class="nav-item"><a href="/provider/shop/request-product" class="nav-link active">Solicitação de produtos</a></li>--}}
 							</ul>
 						</li>
 						<li class="nav-item nav-item-submenu">

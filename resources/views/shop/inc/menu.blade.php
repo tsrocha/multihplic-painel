@@ -56,38 +56,39 @@
 							</a>
 						</li>
 						<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Lojista</div> <i class="icon-menu" title="Forms"></i></li>
-						<li class="nav-item nav-item-submenu">
-							<a href="#" class="nav-link"><i class="icon-people"></i> <span>Clientes</span></a>
-							<ul class="nav nav-group-sub" data-submenu-title="Themes">
-								<li class="nav-item"><a href="/shop/customers" class="nav-link active">Ver Clientes</a></li>
-								<li class="nav-item"><a href="/shop/customers/bonus" class="nav-link active">Bonificação</a></li>
-							</ul>
+						<li class="nav-item">
+							<a href="/shop/customers" class="nav-link"><i class="icon-people"></i> <span>Clientes</span></a>
+							{{--<ul class="nav nav-group-sub" data-submenu-title="Themes">--}}
+								{{--<li class="nav-item"><a href="" class="nav-link active">Ver Clientes</a></li>--}}
+								{{--<li class="nav-item"><a href="/shop/pedidos" class="nav-link active">Pedidos</a></li>--}}
+								{{--<li class="nav-item"><a href="/shop/customers/bonus" class="nav-link active">Bonificação</a></li>--}}
+							{{--</ul>--}}
+						</li>
+						<li class="nav-item">
+							<a href="/shop/pedidos" class="nav-link"><i class="icon-stack2"></i> <span>Pedidos</span></a>
 						</li>
 
-						<li class="nav-item nav-item-submenu">
-							<a href="#" class="nav-link"><i class="icon-cart2"></i> <span>Produtos</span></a>
-							<ul class="nav nav-group-sub" data-submenu-title="Themes">
+						<li class="nav-ite">
+							<a href="/shop/products/list" class="nav-link"><i class="icon-cart2"></i> <span>Produtos</span></a>
+							{{--<ul class="nav nav-group-sub" data-submenu-title="Themes">--}}
 								{{--<li class="nav-item"><a href="/shop/product/atribute-list" class="nav-link active">Atributos</a></li>--}}
 								{{--<li class="nav-item"><a href="/shop/product/departament-list" class="nav-link active">Departamentos</a></li>--}}
 								{{--<li class="nav-item"><a href="/shop/product/category-list" class="nav-link active">Categorias</a></li>--}}
 								{{--<li class="nav-item"><a href="/shop/product/arquive-list" class="nav-link active">Arquivos</a></li>--}}
 								{{--<li class="nav-item"><a href="/shop/product/brand-list" class="nav-link active">Marcas</a></li>--}}
-								<li class="nav-item"><a href="/shop/products/list" class="nav-link active">Produtos</a></li>
-								<li class="nav-item"><a href="/shop/products/request" class="nav-link active">Solicitar Produtos</a></li>
-							</ul>
-						</li>
-
-						<li class="nav-item">
-							<a href="/shop/pedidos" class="nav-link"><i class="icon-stack2"></i> <span>Pedidos</span></a>
+								{{--<li class="nav-item"><a href="/shop/products/list" class="nav-link active">Produtos</a></li>--}}
+								{{--<li class="nav-item"><a href="/shop/products/request" class="nav-link active">Solicitar Produtos</a></li>--}}
+							{{--</ul>--}}
 						</li>
 
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-newspaper"></i> <span>Marketing</span></a>
 							<ul class="nav nav-group-sub" data-submenu-title="Themes">
+								<li class="nav-item"><a href="#" class="nav-link">Banners</a></li>
 								<li class="nav-item"><a href="#" class="nav-link">Campanhas</a></li>
 								<li class="nav-item"><a href="#" class="nav-link">Cupons de Desconto</a></li>
 								<li class="nav-item"><a href="#" class="nav-link">Desconto Progressivo</a></li>
-								<li class="nav-item"><a href="#" class="nav-link">Vale Presente</a></li>
+								{{--<li class="nav-item"><a href="#" class="nav-link">Vale Presente</a></li>--}}
 							</ul>
 						</li>
 
@@ -127,20 +128,20 @@
 								{{--<li class="nav-item"><a href="../usuario-lista.php" class="nav-link">Ver Usuários</a></li>--}}
 							{{--</ul>--}}
 						{{--</li>--}}
-						<li class="nav-item nav-item-submenu">
-							<a href="#" class="nav-link"><i class="icon-versions"></i> <span>Temas</span></a>
-							<ul class="nav nav-group-sub" data-submenu-title="Themes">
-								<li class="nav-item"><a href="/shop/theme/list" class="nav-link">Selecionar tema</a></li>
-								{{--<li class="nav-item"><a href="#" class="nav-link">Banners</a></li>--}}
-							</ul>
-						</li>
 						{{--<li class="nav-item nav-item-submenu">--}}
-							{{--<a href="#" class="nav-link"><i class="icon-versions"></i> <span>Institucional</span></a>--}}
+							{{--<a href="#" class="nav-link"><i class="icon-versions"></i> <span>Temas</span></a>--}}
 							{{--<ul class="nav nav-group-sub" data-submenu-title="Themes">--}}
-								{{--<li class="nav-item"><a href="#" class="nav-link">Criar página</a></li>--}}
-								{{--<li class="nav-item"><a href="#" class="nav-link">Ver páginas</a></li>--}}
+								{{--<li class="nav-item"><a href="/shop/theme/list" class="nav-link">Selecionar tema</a></li>--}}
+								{{--<li class="nav-item"><a href="#" class="nav-link">Banners</a></li>--}}
 							{{--</ul>--}}
 						{{--</li>--}}
+						<li class="nav-item nav-item-submenu">
+							<a href="#" class="nav-link"><i class="icon-versions"></i> <span>Institucional</span></a>
+							<ul class="nav nav-group-sub" data-submenu-title="Themes">
+								<li class="nav-item"><a href="#" class="nav-link">Criar página</a></li>
+								<li class="nav-item"><a href="#" class="nav-link">Ver páginas</a></li>
+							</ul>
+						</li>
 
 					</ul>
 				</div>
