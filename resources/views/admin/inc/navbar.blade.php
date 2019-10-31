@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-md navbar-dark">
-    <div class="navbar-brand">
+    <div class="navbar-brand text-center">
         <a href="/admin" class="d-inline-block">
             <img src="/global_assets/images/logo_light.png" alt="">
         </a>

@@ -59,7 +59,7 @@
 
 					<div class="header-elements d-none">
 						<div class="d-flex justify-content-center">
-							<a href="#" class="btn btn-link btn-float text-default"><i class="icon-list text-primary"></i><span>Ver todos</span></a>
+							<a href="shop/list/representative" class="btn btn-link btn-float text-default"><i class="icon-list text-primary"></i><span>Ver todos</span></a>
 						</div>
 					</div>
 				</div>
@@ -147,13 +147,18 @@
 											<input type="text" name="segment" class="form-control" placeholder="Ex: Calçados">
 										</div>
 										<div class="form-group">
-											<label>ID da loja:</label>
+											<label>ID da loja (nomedolojista.seusite.com.br)</label>
+											<input type="text" name="slug" minlength="5" class="form-control" placeholder="Nome do subdomínio" required>
+										</div>
+										<div class="form-group">
+											<label>URL da loja:</label>
 											<input type="url" name="url" class="form-control" placeholder="https://id-da-loja.seudominio.com.br" required>
 										</div>
 									</fieldset>
 								</div>
 								<div class="col-md-6">
 									<fieldset>
+										<legend class="font-weight-semibold"><i class="icon-reading mr-2"></i> Localização</legend>
 										<div class="form-group">
 											<label>Cep:</label>
 											<input type="text" name="cep" class="form-control" placeholder="" required>

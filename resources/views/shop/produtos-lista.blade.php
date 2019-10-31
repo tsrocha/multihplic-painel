@@ -224,31 +224,31 @@
 								</div>
 								@foreach($atributes as $atribute)
 									@if($atribute->type == 'size' || $atribute->type == 'unity')
-									<div class="form-group mb-2">
-										<div class="font-size-xs text-uppercase text-muted mb-3">{{$atribute->name}}</div>
-										<div class="row row-labels">
-                                            @foreach($atribute->variation as $vatiation)
-											<div class="col-3">
-												<a href="#" class="badge badge-flat border-grey text-grey-800 d-flex justify-content-center p-2 mb-2">{{$vatiation->name}}</a>
+										<div class="form-group mb-2">
+											<div class="font-size-xs text-uppercase text-muted mb-3">{{$atribute->name}}</div>
+											<div class="row row-labels">
+												@foreach($atribute->variation_value as $vatiation)
+													<div class="col-3">
+														<a href="#" class="badge badge-flat border-grey text-grey-800 d-flex justify-content-center p-2 mb-2">{{$vatiation->name}}</a>
+													</div>
+												@endforeach
 											</div>
-											@endforeach
 										</div>
-									</div>
 									@elseif($atribute->type == 'color')
-									<div class="form-group">
-										<div class="font-size-xs text-uppercase text-muted mb-3">{{$atribute->name}}</div>
+										<div class="form-group">
+											<div class="font-size-xs text-uppercase text-muted mb-3">{{$atribute->name}}</div>
 
-										<div class="row">
-                                            @foreach($atribute->variation as $vatiation)
-											<div class="col-4">
-												<div class="mb-2">
-													<a href="#" class="d-block p-2 rounded" ><div class="py-1"></div></a>
-													<div class="font-size-sm text-center text-muted mt-1">{{$vatiation->name}}</div>
-												</div>
+											<div class="row">
+												@foreach($atribute->variation_value as $vatiation)
+													<div class="col-4">
+														<div class="mb-2">
+															<a href="#" class="d-block p-2 rounded" ><div class="py-1"></div></a>
+															<div class="font-size-sm text-center text-muted mt-1">{{$vatiation->name}}</div>
+														</div>
+													</div>
+												@endforeach
 											</div>
-                                            @endforeach
 										</div>
-									</div>
 									@endif
 								@endforeach
 

@@ -35,7 +35,7 @@
 <body>
 
 	<!-- Main navbar -->
-	@include('provider.inc.navbar')
+	@include('shop.inc.navbar')
 		<!-- /main navbar -->
 
 
@@ -43,7 +43,7 @@
 	<div class="page-content">
 
 		<!-- Main sidebar -->
-		@include('provider.inc.menu')
+		@include('shop.inc.menu')
 			<!-- /main sidebar -->
 	
 		<!-- Main content -->
@@ -53,22 +53,16 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Novo Registro</h4>
+						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Meu Dados</h4>
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
-					</div>
-
-					<div class="header-elements d-none">
-						<div class="d-flex justify-content-center">
-							<a href="/provider/usuarios" class="btn btn-link btn-float text-default"><i class="icon-list text-primary"></i><span>Ver todos</span></a>
-						</div>
 					</div>
 				</div>
 
 				<div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
 					<div class="d-flex">
 						<div class="breadcrumb">
-							<a href="/provider/painel" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
-							<span class="breadcrumb-item active">Cadastro de usuários</span>
+							<a href="/admin/painel" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+							<span class="breadcrumb-item active">Dados de cadastro</span>
 						</div>
 
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -85,7 +79,7 @@
 				<!-- 2 columns form -->
 				<div class="card">
 					<div class="card-header header-elements-inline">
-						<h5 class="card-title">Cadastro de usuários</h5>
+						<h5 class="card-title">Dados de cadastro</h5>
 						
 					</div>
 					<div class="card-body">
@@ -102,7 +96,7 @@
                             @endif
                         @endif
 
-						<form action="/provider/perfil" method="post">
+						<form action="/shop/perfil" method="post">
                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 							<div class="row">
 								<div class="col-md-12">
