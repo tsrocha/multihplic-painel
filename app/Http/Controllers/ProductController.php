@@ -160,7 +160,7 @@ class ProductController extends Controller
             foreach ($request->file('images') as $file){
 
                 $name = md5(time()) . '.' .$file->getClientOriginalExtension();
-                $filePath =  Help::slug($socialName).'products/' . $name;
+                $filePath =  Help::slug($socialName).'/products/' . $name;
                 Storage::disk('s3')->put($filePath, file_get_contents($file), 'public');
                 $url  = Storage::disk('s3')->url($filePath);
                 $body['image'][] .= $url;

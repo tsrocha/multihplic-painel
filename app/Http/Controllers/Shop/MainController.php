@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use GuzzleHttp\Exception;
@@ -91,6 +92,16 @@ class Shop_MainController extends Controller
         }
 
         if(isset($response->socialName)) {
+            $cloudFolder = 'shop/' . $body['slug'] . '.env';
+
+            $local = Storage::disk('local');
+            $s3 = Storage::disk('s3');
+
+            if(!$s3->exists($cloudFolder)) {
+                $env = $local->get('app/dev.env');
+                $s3->put($cloudFolder, $env);
+            }
+
             $data['return'] = ['status' => 'success', 'msg' => 'Cadastro efetuado com sucesso!'];
         } else {
             $data['return'] = ['status' => 'error', 'msg' => 'Erro ao tentar cadastrar lojista.'];
@@ -101,3 +112,6 @@ class Shop_MainController extends Controller
     }
 
 }
+
+
+
