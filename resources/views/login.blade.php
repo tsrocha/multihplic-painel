@@ -8,7 +8,7 @@
 	<title>{{$title}} - Multihplic - Suas vendas, seus ganhos</title>
 
 	<!-- Global stylesheets -->
-	<link href="/https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 	<link href="/global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
@@ -45,7 +45,7 @@
 			<div class="content d-flex justify-content-center align-items-center">
 
 				<!-- Login card -->
-				<form class="login-form form-validate" action="login" method="post">
+				<form class="login-form form-validate" action="/login" method="post">
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 					<div class="card mb-0">
 						<div class="card-body">
@@ -89,7 +89,7 @@
 								<button type="submit" class="btn btn-primary btn-block">Entrar <i class="icon-circle-right2 ml-2"></i></button>
 							</div>
 
-						
+
 							<div class="form-group text-center text-muted content-divider">
 								<span class="px-2">Não tem uma conta?</span>
 							</div>
@@ -99,7 +99,7 @@
 							</div>
 
 							<span class="form-text text-center text-muted">Ao continuar, você confirma que leu nossos <a href="/#">Termos e Condições</a> e <a href="/#">Política de Cookies</a></span>
-							
+
 						</div>
 					</div>
 				</form>
